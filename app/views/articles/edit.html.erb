@@ -1,0 +1,15 @@
+<h1>Edit Article</h1>
+
+<%= form_with(model: @article, url: user_article_path) do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit class:"btn btn-secondary"%>
+  </p>
+<% end %>

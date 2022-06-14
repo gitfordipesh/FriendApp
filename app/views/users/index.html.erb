@@ -1,0 +1,30 @@
+
+<div class="d-flex p-2 justify-content-between">
+<h3>ALL Users</h3>
+<Button class="btn btn-secondary text">
+  <%= link_to "Add New User", new_user_path,:class => "text-light"%>
+</Button>
+</div>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Users</th>
+        <th scope="col">City</th>
+        <th scope="col">User Info.</th>
+      </tr>
+    </thead>
+  <% @users.each do |i| %>
+    <tbody>
+      <tr>
+        <td><%= i.id %></td>
+        <td><%= i.name %></td>
+        <td><%= i.city %></td>
+        <td><%= link_to "Show", user_path(i) %></td>  
+        <td><%= link_to "Update", edit_user_path(i) %></td>  
+        <td><%= link_to "Delete", user_path(i), data:{method: :delete, confirm: "Are you Sure?"}%></td>  
+    </tr>
+    </tbody>
+  <% end %>
+</table>

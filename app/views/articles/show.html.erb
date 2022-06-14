@@ -1,0 +1,20 @@
+<h1>Article Show</h1>
+<div class="jumbotron">
+  <h1 class="display-4 text-center"><%= @article.title %></h1>
+  <h6>Created at : <%= @article.created_at %></h1>
+  <h6>Updated at : <%= @article.updated_at %></h1>
+    <br>
+    <br>
+  <p class="lead"><%= @article.body%></p>
+  <br>
+  <button class="btn btn-secondary">
+  <%= link_to "Back", user_path(@article.user),:class => "text-light"%>
+  </button>  
+  <button class="btn btn-secondary">
+  <%= link_to "Edit Article", edit_user_article_path(@article),:class => "text-light"%>
+  </button>  
+ 
+  <button class="btn btn-danger">
+  <%= link_to "Delete Article", user_article_path(@article),:class => "text-light", data:{method: :delete, confirm: "Are you Sure?"}%>
+  </button>
+</div>

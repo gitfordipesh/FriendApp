@@ -1,0 +1,24 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @user.name %> <%= @user.city%></h1>
+  <p class="lead">This is a <%= @user.name%> Profile </p>
+  <div class="jumbotron">
+  <%= render 'articles/articles',articles: @articles %>
+  <br>
+  <button type="button" class="btn btn-secondary">
+  <%= link_to "Add new Article", new_user_article_path(@user),:class => "text-light" %>
+  </button>
+  </div>
+
+  <button type="button" class="btn btn-secondary">
+  <%= link_to "Back", users_path ,:class => "text-light"%>
+  </button>  
+  <button type="button" class="btn btn-secondary">
+  <%= link_to "Edit Profile", edit_user_path(@user),:class => "text-light"%>
+  </button>  
+  <button type="button" class="btn btn-danger">
+  <%= link_to "Delete Profile", user_path(@user), data:{method: :delete, confirm: "Are you Sure?"},:class => "text-light"%>
+  </button>
+</div>
+
+<%# <h2>Add an Article:</h2>
+<%= render 'articles/form'%> 
