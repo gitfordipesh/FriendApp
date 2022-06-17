@@ -1,0 +1,24 @@
+<h1>Hello From Courses</h1>
+<h3 class="text-center">All Courses</h3>
+<br>
+<br>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Course Id.</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Users</th>
+      </tr>
+    </thead>
+    <% @courses.each do |c| %>
+    <tbody>
+      <tr>
+        <td><%= c.id %></td>
+        <td><%= c.title %></td>     
+        <td><%= c.description %></td>
+        <td><%= c.user_ids %></td>      
+    </tr>
+    </tbody>
+  <% end %>
+</table>

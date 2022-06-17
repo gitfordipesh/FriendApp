@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 # get '/users/',to:'users#show'
   resources :users do
     resources :articles
+    resources :courses
   end
-  
+  get 'articles/allshow'
+  get 'courses/allshow'
 
 end

@@ -12,6 +12,7 @@
         <th scope="col">ID</th>
         <th scope="col">Users</th>
         <th scope="col">City</th>
+        <th scope="col">Courses Ids</th>
         <th scope="col">User Info.</th>
       </tr>
     </thead>
@@ -21,6 +22,7 @@
         <td><%= i.id %></td>
         <td><%= i.name %></td>
         <td><%= i.city %></td>
+        <td><%= i.course_ids %></td>
         <td><%= link_to "Show", user_path(i) %></td>  
         <td><%= link_to "Update", edit_user_path(i) %></td>  
         <td><%= link_to "Delete", user_path(i), data:{method: :delete, confirm: "Are you Sure?"}%></td>  

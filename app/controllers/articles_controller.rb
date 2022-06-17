@@ -4,6 +4,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
     
+  def allshow
+    @articles = Article.all.order(params[:user_id])
+  end
+
   def new
     @article = Article.new
     # @user = @articl e.user
