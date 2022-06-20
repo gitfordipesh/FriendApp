@@ -1,0 +1,24 @@
+
+<h3 class="text-center">Courses List</h3>
+<br>
+<br>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Course Info.</th>
+      </tr>
+    </thead>
+  <% courses.each do |c| %>
+    <tbody>
+      <tr>
+        <td><%= c.id %></td>
+        <td><%= c.title %></td>
+        <td><%= link_to "Show", user_course_path(id: c.id,user_id: @user.id) %></td>    
+    </tr>
+    </tbody>
+  <% end %>
+</table>
+<br>
+<%= link_to "Add New Course", assign_user_courses_path(@user),:class => "text-light btn btn-secondary" %>

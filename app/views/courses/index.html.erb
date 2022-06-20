@@ -1,5 +1,11 @@
 <h1>Hello From Courses</h1>
+<div class="d-flex p-2 justify-content-between">
 <h3 class="text-center">All Courses</h3>
+<Button class="btn btn-secondary text">
+    <%= link_to "Add New Course", new_course_path,:class => "text-light" %>
+</Button>
+</div>
+
 <br>
 <br>
 <table class="table table-hover">

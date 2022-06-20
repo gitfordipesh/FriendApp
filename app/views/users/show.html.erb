@@ -7,6 +7,7 @@
   <button type="button" class="btn btn-secondary">
   <%= link_to "Add new Article", new_user_article_path(@user),:class => "text-light" %>
   </button>
+  <%= render 'courses/courses',courses:@courses %>
   </div>
 
   <button type="button" class="btn btn-secondary">

@@ -8,9 +8,17 @@ Rails.application.routes.draw do
 # get '/users/',to:'users#show'
   resources :users do
     resources :articles
-    resources :courses
-  end
+    resources :courses do
+      collection do
+        get 'assign'
+        post 'assign', to: 'users#assign_course'
+      end 
+    end
+      #Ex:- :default =>''
+   end
+  resources :courses
   get 'articles/allshow'
-  get 'courses/allshow'
+  # get 'courses/allshow'
+  # get 'courses/new'
 
 end

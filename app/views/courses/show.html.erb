@@ -1,0 +1,21 @@
+<h1>Course Show</h1>
+<div class="jumbotron">
+  <h2 class="display-2 text-center"><%= @course.id %></h2>
+  <h1 class="display-4 text-center"><%= @course.title %></h1>
+  <h6>Added at : <%= @course.created_at %></h1>
+  <h6>Updated at : <%= @course.updated_at %></h1>
+    <br>
+    <br>
+  <p class="lead"><%= @course.description%></p>
+  <br>
+  <button class="btn btn-secondary">
+  <%= link_to 'Back', courses_path %>
+  </button>  
+  <button class="btn btn-secondary">
+  <%# <%= link_to "Edit Article", edit_user_course_path(@course),:class => "text-light"%> %>
+  </button>  
+ 
+  <button class="btn btn-danger">
+  <%# <%= link_to "Delete Article", user_course_path(@course),:class => "text-light", data:{method: :delete, confirm: "Are you Sure?"}%> %>
+  </button>
+</div>

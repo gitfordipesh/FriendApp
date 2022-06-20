@@ -1,0 +1,6 @@
+<h1> Page to assign course to users</h1>
+
+<%= form_with(scope: "course") do |f| %>
+<%= f.select :id, @courses.map{|c| [c.title,c.id]}%>
+<%= f.submit class:"btn btn-secondary"%>
+<%end%>

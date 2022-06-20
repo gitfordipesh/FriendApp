@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
     def index
-        @users = User.all
+      @users = User.all.order(name: :asc)
     end   
 
     def show
      @user = User.find(params[:id])
      @articles = @user.articles
+     @courses = @user.courses
     end
 
     def new
@@ -38,6 +39,13 @@ class UsersController < ApplicationController
 
     end
 
+    def assign_course
+      @user = User.find(params[:user_id])
+      course = Course.find(params[:course][:id])
+      @user.courses << course
+      redirect_to user_path(@user)
+    end
+
     def destroy
       @user = User.find(params[:id])
       @user.destroy
@@ -49,7 +57,7 @@ class UsersController < ApplicationController
 
     private
     def user_params
-      params.require(:user).permit(:name,:city)
+      params.require(:user).permit(:name,:city,:id)
     end
 
 end

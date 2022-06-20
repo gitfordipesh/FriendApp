@@ -5,12 +5,12 @@ class ArticlesController < ApplicationController
   end
     
   def allshow
-    @articles = Article.all.order(params[:user_id])
+    @articles = Article.all
   end
 
   def new
     @article = Article.new
-    # @user = @articl e.user
+    # @user = @article.user
   end
 
   def create
