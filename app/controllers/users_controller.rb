@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     def show
      @user = User.find(params[:id])
      @articles = @user.articles
-     @courses = @user.courses
+     @courses = @user.courses.order(id: :asc)
     end
 
     def new
