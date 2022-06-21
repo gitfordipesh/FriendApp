@@ -7,6 +7,7 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
      @articles = @user.articles
      @courses = @user.courses.order(id: :asc)
+    #  @user = UserProject.find_by(user_id:13,project_id:1)
     end
 
     def new

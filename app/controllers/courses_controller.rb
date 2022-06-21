@@ -6,7 +6,10 @@ class CoursesController < ApplicationController
     end
     
     def assign
-        @courses = Course.all
+         u = User.find(params[:user_id])
+         a = u.courses.ids
+         @courses = Course.where('id NOT IN (?)', a)
+        # @courses = Course.all
     end
 
     def show

@@ -9,11 +9,12 @@
 <br>
 <br>
 <table class="table table-hover">
-    <thead>
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Course Id.</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
+        <th scope="col">Total Users</th>
         <th scope="col">Users</th>
       </tr>
     </thead>
@@ -23,6 +24,7 @@
         <td><%= c.id %></td>
         <td><%= c.title %></td>     
         <td><%= c.description %></td>
+        <td><%= c.users.count %></td>      
         <td><%= c.user_ids %></td>      
     </tr>
     </tbody>

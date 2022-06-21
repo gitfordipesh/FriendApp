@@ -8,6 +8,28 @@
   <%= link_to "Add new Article", new_user_article_path(@user),:class => "text-light" %>
   </button>
   <%= render 'courses/courses',courses:@courses %>
+
+<h3 class="text-center">All Assigned Projects</h3>
+<br>
+<br>
+<table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Project Id.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Deadline</th>
+      </tr>
+    </thead>
+    <% @user.user_projects.each do |a| %>
+    <tbody>
+      <tr>
+        <td><%= a.project.id %></td>
+        <td><%= a.project.name %></td>     
+        <td><%= a.submission_date %></td>         
+    </tr>
+    </tbody>
+  <% end %>
+</table>
   </div>
 
   <button type="button" class="btn btn-secondary">

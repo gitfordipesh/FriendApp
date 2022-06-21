@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'home#index'
   # get '/users', to: 'users#index'
@@ -14,6 +15,12 @@ Rails.application.routes.draw do
         post 'assign', to: 'users#assign_course'
       end 
     end
+    # resources :projects do
+    #   collection do
+    #     get 'assign'
+    #     post 'assign', to: 'projects#assign_user'
+    #   end
+    # end
       #Ex:- :default =>''
    end
   resources :courses
