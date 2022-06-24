@@ -15,8 +15,12 @@ class ArticlesController < ApplicationController
 
   def create
     @user = User.find(params[:user_id])
-    @article = @user.articles.create(article_params)
-    redirect_to user_path(@user)
+    @article = @user.articles.new(article_params)
+    if @article.save
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
     
   def destroy

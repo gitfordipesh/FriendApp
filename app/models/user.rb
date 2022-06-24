@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
     
     validates :name, presence: true
-    validates :city, presence: true, length: { minimum: 3 }  
+    validates :city, presence: true, length: { minimum: 3 }
+    
+    validates :name, :city ,format:{with:/\A[a-zA-Z]+\z/ , message:"Only Alphabets are allowed"}
 end

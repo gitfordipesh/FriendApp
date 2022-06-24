@@ -23,7 +23,7 @@ class CoursesController < ApplicationController
 
     def create
         @course = Course.new(course_params)
-        if @course.save!
+        if @course.save
           redirect_to courses_path
         else
           render :new, status: :unprocessable_entity
