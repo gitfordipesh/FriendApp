@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+
+  before_action :set_user ,only: %i[show edit update destroy]
     def index
       @users = User.all.order(name: :asc)
     end   
 
     def show
-     @user = User.find(params[:id])
+    #  @user = User.find(params[:id])
      @articles = @user.articles
      @courses = @user.courses.order(id: :asc)
     #  @user = UserProject.find_by(user_id:13,project_id:1)
@@ -26,11 +28,11 @@ class UsersController < ApplicationController
     end
 
     def edit
-      @user = User.find(params[:id])
+      # @user = User.find(params[:id])
     end 
 
     def update
-      @user = User.find(params[:id])
+      # @user = User.find(params[:id])
 
       if @user.update(user_params)
         redirect_to @user
@@ -48,7 +50,7 @@ class UsersController < ApplicationController
     end
 
     def destroy
-      @user = User.find(params[:id])
+      # @user = User.find(params[:id])
       @user.destroy
       redirect_to users_path
 
@@ -59,6 +61,11 @@ class UsersController < ApplicationController
     private
     def user_params
       params.require(:user).permit(:name,:city,:id)
+    end
+
+    private
+    def set_user
+      @user = User.find(params[:id])
     end
 
 end

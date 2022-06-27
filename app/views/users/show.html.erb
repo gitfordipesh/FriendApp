@@ -1,5 +1,6 @@
 <div class="jumbotron">
   <h1 class="display-4"><%= @user.name %> <%= @user.city%></h1>
+  <h1 class="display-4"><%= @user.user_with_city%></h1>
   <p class="lead">This is a <%= @user.name%> Profile </p>
   <div class="jumbotron">
   <%= render 'articles/articles',articles: @articles %>
