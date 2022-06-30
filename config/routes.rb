@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   resources :projects
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'home#index'
@@ -25,7 +26,4 @@ Rails.application.routes.draw do
    end
   resources :courses
   get 'articles/allshow'
-  # get 'courses/allshow'
-  # get 'courses/new'
-
 end

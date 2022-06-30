@@ -9,8 +9,9 @@
 <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Users</th>
+        <th scope="col">S No.</th>
+        <th scope="col">User Id</th>
+        <th scope="col">Name</th>
         <th scope="col">City</th>
         <th scope="col">Courses Ids</th>
         <th scope="col">No. Of Courses</th>
@@ -18,9 +19,11 @@
         <th colspan="3">User Info.</th>
       </tr>
     </thead>
+  <% index = 1 %>
   <% @users.each do |i| %>
     <tbody>
       <tr>
+        <td><%= index %></td>
         <td><%= i.id %></td>
         <td><%= i.name %></td>
         <td><%= i.city %></td>
@@ -29,7 +32,8 @@
         <td><%= i.project_ids.count %></td>
         <td><%= link_to "Show", user_path(i) %></td>  
         <td><%= link_to "Update", edit_user_path(i) %></td>  
-        <td><%= link_to "Delete", user_path(i), data:{method: :delete, confirm: "Are you Sure?"}%></td>  
+        <td><%= link_to "Delete", user_path(i), data:{method: :delete, confirm: "Are you Sure?"}%></td> 
+      <% index = index+1 %> 
     </tr>
     </tbody>
   <% end %>

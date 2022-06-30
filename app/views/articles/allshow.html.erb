@@ -4,19 +4,23 @@
 <table class="table table-hover">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">S No.</th>
         <th scope="col">Article Id.</th>
         <th scope="col">Title</th>
         <th scope="col">User Name</th>
         <th scope="col">User Id.</th>
       </tr>
     </thead>
+    <% index = 1%>
     <% @articles.each do |a| %>
     <tbody>
       <tr>
+        <td><%= index %></td>
         <td><%= a.id %></td>
         <td><%= a.title %></td>     
         <td><%= a.user.name %></td>     
         <td><%= a.user_id %></td>     
+  <% index = index+1 %>
     </tr>
     </tbody>
   <% end %>
