@@ -30,11 +30,32 @@
         <td><%= i.course_ids %></td>
         <td><%= i.course_ids.count %></td>
         <td><%= i.project_ids.count %></td>
-        <td><%= link_to "Show", user_path(i) %></td>  
-        <td><%= link_to "Update", edit_user_path(i) %></td>  
-        <td><%= link_to "Delete", user_path(i), data:{method: :delete, confirm: "Are you Sure?"}%></td> 
+        <td><%= link_to i do%>
+          <i class="fa-solid fa-eye text-info"></i>
+        <%end%>
+        </td> 
+        <td><%= link_to edit_user_path(i) do%>
+          <i class="fa-solid fa-pen text-warning"></i> 
+        <%end%>
+        </td>  
+        <td><%= link_to i, data:{method: :delete, confirm: "Are you Sure?"} do%>
+          <i class="fa-solid fa-trash text-danger"></i>
+        <%end%>
+        </td> 
       <% index = index+1 %> 
     </tr>
     </tbody>
   <% end %>
 </table>
+<%# add jquery and script for tr clickable and show
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$(function() {
+    $('tr').css('cursor', 'pointer')
+
+    .click(function() {
+        window.location = $('a', this).attr('href');
+        return false;
+    });
+});
+</script> %>

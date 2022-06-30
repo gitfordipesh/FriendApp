@@ -9,9 +9,30 @@ class ProjectsController < ApplicationController
   # GET /projects/1 or /projects/1.json
   def show
     @project = Project.find(params[:id])
-    # @user = User.find(params[:id])
+    user_project = UserProject.find(params[:id])
   end
   
+  def assign
+    @project = Project.find(params[:project_id])
+    a = @project.users.ids
+    a = a.empty? ? 0 : a
+    @users = User.where('id NOT IN (?)', a)
+  end
+
+  def assign_user
+    @project = Project.find(params[:project_id])
+    user = User.find(params[:user][:id])
+    UserProject.create(user_id:user.id,project_id:@project.id,submission_date:params[:user][:submission_date])
+    redirect_to @project
+  end
+
+  def deassign_user
+    @project = Project.find(params[:project_id])
+    @user_project =UserProject.find(params[:id])
+    @user_project.destroy
+    redirect_to @project
+  end
+
   # GET /projects/new
   def new
     @project = Project.new

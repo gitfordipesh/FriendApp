@@ -70,6 +70,7 @@
         <li class = "nav-item">
         <%= link_to "First Page", fi_path, class:"nav-link"%>
         </li> 
+      </ul> 
         <div class="dropdown">
           <button onclick="myFunction()" class="dropbtn"><%= current_admin.email%> | <i class="fa-solid fa-angle-down"></i></button>
           <div id="myDropdown" class="dropdown-menu">
@@ -84,8 +85,8 @@
         <li class = "nav-item">
         <%= link_to "Sign In", new_admin_session_path, class:"nav-link"%>
         </li>        
-      <% end %>
       </ul>
+      <% end %>
 
     </div>
   </div>

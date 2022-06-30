@@ -1,1 +1,13 @@
 <h1> Page to assign user to Projects</h1>
+<%= @project.name %>
+<%= form_with(scope: "user") do |f| %>
+<div class="field">
+    <%= f.label :Select_User %>
+    <%= f.select :id, @users.map{|c| [c.name,c.id]}%>
+</div>
+<div class="field">
+    <%= f.label :submission_date %>
+    <%= f.date_field :submission_date %>
+</div>
+<%= f.submit class:"btn btn-secondary"%>
+<%end%>

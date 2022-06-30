@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2022_06_29_071726) do
 
   create_table "courses", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
-    t.string "description"
+    t.string "description"User.where('id NOT IN (?)', a)
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -16,14 +16,12 @@ Rails.application.routes.draw do
         post 'assign', to: 'users#assign_course'
       end 
     end
-    # resources :projects do
-    #   collection do
-    #     get 'assign'
-    #     post 'assign', to: 'projects#assign_user'
-    #   end
-    # end
-      #Ex:- :default =>''
    end
   resources :courses
   get 'articles/allshow'
+
+  resources :projects do
+    get 'assign'
+    post 'assign', to: 'projects#assign_user'
+  end
 end

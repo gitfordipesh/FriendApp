@@ -1,2 +1,95 @@
-<h1>hello first</h1>
-<p>Created by Rahul</p>
+<h1>Hello First Page</h1>
+<p>Created by Dipesh Gupta</p>
+<div class="card">
+    <div class="card-header">
+        <h4>Instance Methods</h4>
+    </div>
+    <div class="card-body">
+        <p>Normal Ruby Methods which can be invoked(called) on an instance of a class(Model Class).
+        <br/>
+        Every instance of a class(Model Class) can access these methods(function) and perform required operations. 
+        <br/>
+        for example, it is required for custom formatting of data like <em>combined name with city</em> in the <em>user/show </em>Page.
+            <div class="card">
+                <div class="card-header">
+                    <h4>In user.rb</h4>
+                </div>
+                <div class="card-body">
+                    <p>    
+                    def user_with_city
+                    <br/>
+                        "#{name} #{city}" 
+                    <br/>
+                    end
+                    </p>
+                </div>
+            </div>
+            and Called it in <em>user/show</em> as <em>@user.user_with_city.</em>
+        </p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h4>Member route</h4>
+    </div>
+    <div class="card-body">
+        <p>
+        A Route which <em>require</em> the ID of the resource to perform an Action are declared as member routes.
+        <br/>
+        example of actions that require the ID of the resource:
+        <strong>Show,Edit,Update,Delete</strong>
+        <div class="card">
+            <div class="card-header">
+                <h4>Example of Member Route</h4>
+            </div>
+            <div class="card-body">
+                <p>    
+                    resources :projects do
+                <br/>
+                    member do
+                <br/>
+                    get :assign
+                <br/>
+                end
+                <br/>
+                end
+                </p>
+            </div>
+        </div>
+        * If also we do not declare route as member in resources do then also by default it is a member route.
+        </p>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h4>Collection route</h4>
+    </div>
+    <div class="card-body">
+        <p>
+        A Route which <em>does not require </em>the ID of the resource to perform an Action are declared as member routes.
+        <br/>
+        example of actions that require the ID of the resource:
+        <strong>Index,Create,New</strong>
+        <div class="card">
+            <div class="card-header">
+                <h4>Example of Collection Route</h4>
+            </div>
+            <div class="card-body">
+                <p>    
+                    resources :courses do
+                <br/>
+                    collection do
+                <br/>
+                    get :assign
+                <br/>
+                end
+                <br/>
+                end
+                </p>
+            </div>
+        </div>
+        </p>
+    </div>
+</div>
