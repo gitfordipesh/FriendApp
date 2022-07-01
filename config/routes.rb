@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   resources :projects do
     get 'assign'
     post 'assign', to: 'projects#assign_user'
+    delete 'deassign', to: 'projects#deassign_user'
   end
 end

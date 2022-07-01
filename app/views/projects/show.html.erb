@@ -32,6 +32,7 @@
         <td><%= u.submission_date.strftime("%d %b, %y at %I : %M %p") %></td>
         <td><%= (u.submission_date-Date.today).to_i%></td>
         <td><%= distance_of_time_in_words(u.submission_date,Date.today)%></td>
+        <td><%= link_to 'Deassign',project_deassign_path(user_id:u.user_id,project_id:u.project_id),data:{method: :delete, confirm: "Sure To Deassign?"}%></td>
     </tr>
     </tbody>
   <% end %>

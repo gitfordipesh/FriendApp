@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
 
   def deassign_user
     @project = Project.find(params[:project_id])
-    @user_project =UserProject.find(params[:id])
+    @user_project = UserProject.find(params[:user_id])
     @user_project.destroy
     redirect_to @project
   end
